@@ -2,5 +2,7 @@ import { createApp } from "vue"
 import App from "./app.vue"
 
 import "@/styles/globals.css"
+import { router } from "./routes"
 
-createApp(App).mount("#app")
+const app = createApp(App)
+app.use(router).mount("#app")
