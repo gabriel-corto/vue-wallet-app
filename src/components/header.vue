@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Logo from "./logo.vue"
 import Navbar from "./navbar.vue"
-import NewTransactionButton from "./new-transaction-button.vue"
+import NewTransactionModal from "@/components/new-transaction-modal/new-transaction-modal.vue"
 </script>
 
 <template>
@@ -13,6 +13,6 @@ import NewTransactionButton from "./new-transaction-button.vue"
 			<Navbar />
 		</div>
 
-		<NewTransactionButton />
+		<NewTransactionModal />
 	</header>
 </template>

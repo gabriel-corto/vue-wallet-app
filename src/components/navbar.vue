@@ -17,7 +17,7 @@ import { House, ArrowLeftRight } from "lucide-vue-next"
 			class="flex items-center gap-2 hover:bg-indigo-50 duration-150 transition-all rounded-md hover:text-indigo-500 px-3 py-1"
 		>
 			<ArrowLeftRight class="w-5 h-5" />
-			<span>Transaçõs</span>
+			<span>Transações</span>
 		</RouterLink>
 	</nav>
 </template>

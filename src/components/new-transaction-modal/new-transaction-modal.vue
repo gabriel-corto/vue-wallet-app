@@ -1,29 +1,15 @@
 <script setup lang="ts">
-import { Plus } from "lucide-vue-next"
-
-import {
-	TransitionRoot,
-	TransitionChild,
-	Dialog,
-	DialogPanel,
-	DialogTitle,
-} from "@headlessui/vue"
+import { TransitionRoot, TransitionChild, Dialog } from "@headlessui/vue"
 import { useNewTransactionModal } from "@/store/new-transation-modal"
+
+import ModalTrigger from "./modal-trigger.vue"
+import ModalContent from "./modal-content.vue"
 
 const newTransactionModalStore = useNewTransactionModal()
 </script>
 
 <template>
-	<div>
-		<button
-			type="button"
-			@click="newTransactionModalStore.openModal"
-			class="bg-indigo-500 text-white flex items-center justify-center font-bold rounded-full hover:bg-indigo-700 duration-150 transition-all cursor-pointer p-2"
-		>
-			<Plus class="w-5 h-5" />
-			<span class="max-sm:hidden">Nova Transação</span>
-		</button>
-	</div>
+	<ModalTrigger />
 
 	<TransitionRoot appear :show="newTransactionModalStore.isOpen" as="template">
 		<Dialog
@@ -56,16 +42,7 @@ const newTransactionModalStore = useNewTransactionModal()
 						leave-from="opacity-100 scale-100"
 						leave-to="opacity-0 scale-95"
 					>
-						<DialogPanel
-							class="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
-						>
-							<DialogTitle
-								as="h3"
-								class="text-lg font-medium leading-6 text-gray-900"
-							>
-								Cadastrar Nova Transação
-							</DialogTitle>
-						</DialogPanel>
+						<ModalContent />
 					</TransitionChild>
 				</div>
 			</div>
